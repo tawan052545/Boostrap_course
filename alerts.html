@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alert</title>
+    <link rel="shortcut icon" href="css/icons-hero.png" type="image/x-icon" />
+    <!-- CSS Boostrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <!-- JS Boostrap -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- <div class="alert alert-success fade show alert-dismissible" role="alert">
+        <h1>Success</h1>
+        <a class="alert-link" href="#">Go here find put more.</a>
+        <button
+          class="btn-close"
+          aria-label="close"
+          data-bs-dismiss="alert"
+        ></button>
+      </div>
+      <div class="alert alert-danger fade show alert-dismissible" role="alert">
+        Failure
+        <button
+          class="btn-close"
+          aria-label="close"
+          data-bs-dismiss="alert"
+        ></button>
+      </div> -->
+      <div id="alertPlacehoder"></div>
+      <button class="btn btn-success" id="alertBtn">Show Alert</button>
+    </div>
+
+    <script>
+      var alertPlacehoder = document.querySelector("#alertPlacehoder");
+      var alertBtn = document.querySelector("#alertBtn");
+
+      const alert = (message, type) => {
+        const wrapper = document.createElement("div");
+        wrapper.innerHTML = `<div class ="alert alert-${type} alert-dismissible" role="alert">${message}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-table="Close">
+                </botton></div>`;
+
+        alertPlacehoder.append(wrapper);
+      };
+
+      if (alertBtn) {
+        alertBtn.addEventListener("click", () => {
+          alert("Nice, you triggered this alertmessge!", "success");
+        });
+      }
+    </script>
+  </body>
+</html>
